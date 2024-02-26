@@ -1,0 +1,8 @@
+.commentBox{
+    border: 1px solid black;
+    border-radius: 5px;
+    text-align: center;
+    width: 33%;
+    height: 200px;
+    margin-bottom: 10px;
+}

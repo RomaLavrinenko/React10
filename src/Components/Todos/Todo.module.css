@@ -1,0 +1,8 @@
+.todoBox{
+    border: 1px solid black;
+    border-radius: 5px;
+    text-align: center;
+    width: 33%;
+    height: 100px;
+    margin-bottom: 10px;
+}
