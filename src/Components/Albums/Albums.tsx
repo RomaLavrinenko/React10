@@ -1,20 +1,16 @@
 import { useEffect } from 'react';
 import Albom from './Albom';
-import { getAlbumsThunk } from '../../redux/reducers/action/componentsAction';
 import { useDispatch, useSelector } from 'react-redux';
-import { AppDispatch, AppStateType } from '../../redux/store';
-import { IntAlbums } from '../../redux/reducers/albumsReducers';
-import React from 'react';
-
+import { IntAlbums, getAlbomThankRTK } from '../reduxTK/slice/AlbumsSlice';
+import { AppDispatch, RootState } from '../reduxTK/store';
 
 const Albums = () =>{
 
-    const albums = useSelector((store:AppStateType): IntAlbums[] | [] => store.albumsReducers.albums);
-    const dispatch:AppDispatch = useDispatch()
-    const getAlbums = () => dispatch(getAlbumsThunk());
-    useEffect(() =>{
-      getAlbums();
-    },[])
+  const dispatch:AppDispatch = useDispatch()
+  const albums = useSelector((store:RootState): IntAlbums[] | []  => store?.albums?.albums);
+  useEffect(() =>{
+    dispatch(getAlbomThankRTK())
+  },[])
 
     return(
         <div style={{display:"flex", flexWrap: 'wrap', justifyContent: 'space-between' }}>

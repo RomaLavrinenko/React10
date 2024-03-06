@@ -1,5 +1,5 @@
 import React from 'react';
-import { IntComments } from '../../redux/reducers/commentsRedecers';
+import { IntComments } from '../reduxTK/slice/CommentsSlice';
 const Comment = (props:IntComments) =>{
     
     return(

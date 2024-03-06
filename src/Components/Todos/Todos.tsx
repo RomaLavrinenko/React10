@@ -1,20 +1,17 @@
 import { useEffect } from 'react';
 import Todo from './Todo';
-import { getTodosThunk } from '../../redux/reducers/action/componentsAction';
 import { useDispatch, useSelector } from 'react-redux';
-import { IntTodos } from '../../redux/reducers/todosReducers';
-import { AppDispatch, AppStateType } from '../../redux/store';
-import React from 'react';
+import { IntTodos, getTodosThankRTK } from '../reduxTK/slice/TodosSlice';
+import { AppDispatch, RootState } from '../reduxTK/store';
 
 
 
 
 const Todos = () =>{
-    const todos= useSelector((store:AppStateType): IntTodos[] | []  => store.todosReducers.todos);
     const dispatch:AppDispatch = useDispatch()
-    const getTodos = () => dispatch(getTodosThunk());
+    const todos = useSelector((store:RootState): IntTodos[] | []  => store?.todos?.todos);
     useEffect(() =>{
-      getTodos();
+      dispatch(getTodosThankRTK())
     },[])
 
     return(

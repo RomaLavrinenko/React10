@@ -1,5 +1,5 @@
 import React from 'react';
-import { IntAlbums } from '../../redux/reducers/albumsReducers';
+import { IntAlbums } from '../reduxTK/slice/AlbumsSlice';
 const Albom = (props:IntAlbums) =>{
     return(
         <div style={{border:"1px solid black", borderRadius:"5px", textAlign:"center",width:"33%",height:"100px",marginBottom:'10px'}}>

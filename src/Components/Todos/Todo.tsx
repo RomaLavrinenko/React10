@@ -1,5 +1,5 @@
 import React from 'react';
-import { IntTodos } from '../../redux/reducers/todosReducers';
+import { IntTodos } from '../reduxTK/slice/TodosSlice';
 const Todo = (props:IntTodos) =>{
     return(
         <div style={{border:"1px solid black", borderRadius:"5px", textAlign:"center",width:"33%",height:"100px",marginBottom:'10px'}}>
